@@ -1,0 +1,269 @@
+/* Estilos do formulário de cadastro */
+:root {
+    --verde-escuro: #285943;
+    --verde: #4f896b;
+    --verde-claro: #eaf5e8;
+    --fundo: #f7faf4;
+    --texto: #26372d;
+    --borda: #d7e4d5;
+    --rosa: #fff0ee;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.topo {
+    padding: 26px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(120deg, #386d50, #77a66e);
+}
+
+.marca {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.topo p {
+    margin: 5px 0 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.4fr);
+    gap: 22px;
+    width: min(1400px, 94%);
+    margin: 30px auto;
+    align-items: start;
+}
+
+.painel {
+    min-width: 0;
+    padding: 24px;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(40, 89, 67, 0.08);
+}
+
+h1, h2 {
+    margin-top: 0;
+    color: var(--verde-escuro);
+}
+
+h1 {
+    font-size: 1.55rem;
+}
+
+h2 {
+    margin-bottom: 4px;
+    font-size: 1.35rem;
+}
+
+.subtitulo {
+    margin-top: 0;
+    color: #65756a;
+    font-size: 0.92rem;
+}
+
+.campo {
+    margin: 18px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 700;
+}
+
+input, select, textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #cbd9cb;
+    border-radius: 9px;
+    background: #fff;
+    color: var(--texto);
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(79, 137, 107, 0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    color: #718075;
+}
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.botao {
+    padding: 11px 15px;
+    border: 0;
+    border-radius: 9px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+.botao:hover {
+    filter: brightness(0.96);
+    transform: translateY(-1px);
+}
+
+.botao-principal {
+    background: var(--verde-escuro);
+    color: white;
+}
+
+.botao-secundario {
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+}
+
+.botao-perigo {
+    margin-top: 18px;
+    background: #fff0ee;
+    color: #9c352d;
+}
+
+.aviso {
+    margin: 14px 0;
+    padding: 12px 14px;
+    border-radius: 9px;
+}
+
+.aviso[hidden] {
+    display: none;
+}
+
+.aviso-erro {
+    color: #8b2824;
+    background: var(--rosa);
+    border: 1px solid #f0c3be;
+}
+
+.aviso-sucesso {
+    color: #245c3b;
+    background: #eaf7ed;
+    border: 1px solid #b9dfc3;
+}
+
+.cabecalho-tabela {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.contador {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.tabela-rolagem {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #e5eee3;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background: #eaf5e8;
+    color: var(--verde-escuro);
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.vazio {
+    padding: 24px;
+    color: #6b7a6f;
+    text-align: center;
+}
+
+.botao-remover {
+    padding: 6px 9px;
+    border: 0;
+    border-radius: 7px;
+    background: #fff0ee;
+    color: #9c352d;
+    cursor: pointer;
+}
+
+.rodape {
+    padding: 12px 20px 26px;
+    color: #718075;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .layout {
+        width: 92%;
+        margin: 18px auto;
+    }
+
+    .painel {
+        padding: 17px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .acoes .botao {
+        width: 100%;
+    }
+}

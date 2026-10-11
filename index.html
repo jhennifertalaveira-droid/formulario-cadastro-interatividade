@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Jardim de Ideias 🌻</title>
+    <link rel="stylesheet" href="estilos_exercicio1.css">
+    <script src="js_exercicio1.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <div class="marca">🌻 Jardim de Ideias</div>
+        <p>Um espaço simples para registrar suas informações</p>
+    </header>
+
+    <main class="layout">
+        <section class="painel formulario-painel">
+            <h1>Formulário de cadastro</h1>
+            <p class="subtitulo">Preencha os campos abaixo para adicionar um cadastro à tabela.</p>
+
+            <div id="erro" class="aviso aviso-erro" role="alert" aria-live="polite" hidden></div>
+            <div id="sucesso" class="aviso aviso-sucesso" role="status" aria-live="polite" hidden></div>
+
+            <form id="formulario-cadastro" novalidate>
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name">
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="voce@exemplo.com" autocomplete="email">
+                </div>
+
+                <div class="campo">
+                    <label for="cargo">Cargo</label>
+                    <select id="cargo" name="cargo">
+                        <option value="">Selecione um cargo</option>
+                        <option value="Estudante">Estudante</option>
+                        <option value="Desenvolvedor(a)">Desenvolvedor(a)</option>
+                        <option value="Analista de Dados">Analista de Dados</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva uma mensagem (mínimo de 10 caracteres)"></textarea>
+                    <small>Escreva pelo menos 10 caracteres.</small>
+                </div>
+
+                <div class="acoes">
+                    <button type="submit" class="botao botao-principal">Cadastrar</button>
+                    <button type="reset" class="botao botao-secundario">Limpar campos</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel tabela-painel">
+            <div class="cabecalho-tabela">
+                <div>
+                    <h2>Cadastros realizados</h2>
+                    <p class="subtitulo">Os registros salvos neste navegador aparecem aqui.</p>
+                </div>
+                <span id="contador" class="contador">0 cadastros</span>
+            </div>
+
+            <div class="tabela-rolagem">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Cargo</th>
+                            <th>Mensagem</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-cadastros">
+                        <tr id="linha-vazia">
+                            <td colspan="5" class="vazio">Ainda não há cadastros. Preencha o formulário para começar 🌱</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" id="limpar-cadastros" class="botao botao-perigo">Apagar todos os cadastros</button>
+        </section>
+    </main>
+
+    <footer class="rodape">Feito com carinho e um toque de girassol 🌻</footer>
+</body>
+</html>
